@@ -1,0 +1,17 @@
+function setNextCallNumber() {
+    const inputEl = document.getElementById('nextCallInp');
+    const numberToSet = parseInt(inputEl.value, 10);
+
+    // Just return silently if invalid
+    if (isNaN(numberToSet) || numberToSet < 1 || numberToSet > 90) {
+        return;
+    }
+
+    // Just return silently if already called
+    if (currentCalledNumbers.includes(numberToSet)) {
+        return;
+    }
+    
+    nextManualCallNumber = numberToSet;
+    inputEl.value = ''; 
+}
